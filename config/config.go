@@ -132,6 +132,7 @@ const (
 	AzureNASBlockStorageDriverName     = "azure-netapp-files-subvolume"
 	GCPNFSStorageDriverName            = "gcp-cvs"
 	FakeStorageDriverName              = "fake"
+	NVMeoFDriverName            	   = "nvmeof"
 
 	/* REST frontend constants */
 	MaxRESTRequestSize  = 40960
@@ -141,6 +142,7 @@ const (
 	/* Docker constants */
 	DockerPluginModeEnvVariable = "DOCKER_PLUGIN_MODE" // set via contrib/docker/plugin/plugin.json
 	DockerPluginConfigLocation  = "/etc/netappdvp"
+	
 
 	/* Kubernetes deployment constants */
 	ContainerTrident = "trident-main"

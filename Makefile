@@ -375,9 +375,9 @@ installer: binaries chart
 	@cp -a trident-installer /tmp/
 	@cp -a deploy /tmp/trident-installer/
 	-@cp -a $(call binary_path,tridentctl,linux/amd64) /tmp/trident-installer/
-	@sed -Ei "s|${DEFAULT_OPERATOR_TAG}|${OPERATOR_TAG}|g" /tmp/trident-installer/deploy/operator.yaml
-	@sed -Ei "s|${DEFAULT_OPERATOR_TAG}|${OPERATOR_TAG}|g" /tmp/trident-installer/deploy/bundle_pre_1_25.yaml
-	@sed -Ei "s|${DEFAULT_OPERATOR_TAG}|${OPERATOR_TAG}|g" /tmp/trident-installer/deploy/bundle_post_1_25.yaml
+	@sed -E -i '' "s|${DEFAULT_OPERATOR_TAG}|${OPERATOR_TAG}|g" /tmp/trident-installer/deploy/operator.yaml
+	@sed -E -i '' "s|${DEFAULT_OPERATOR_TAG}|${OPERATOR_TAG}|g" /tmp/trident-installer/deploy/bundle_pre_1_25.yaml
+	@sed -E -i '' "s|${DEFAULT_OPERATOR_TAG}|${OPERATOR_TAG}|g" /tmp/trident-installer/deploy/bundle_post_1_25.yaml
 	@mkdir -p /tmp/trident-installer/helm
 	@cp -a trident-operator-*.tgz /tmp/trident-installer/helm/
 	@mkdir -p /tmp/trident-installer/extras/bin

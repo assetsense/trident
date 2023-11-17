@@ -1,0 +1,9 @@
+package nvmeof
+
+type AttributeRequest struct {
+    Size int64
+
+    Type string
+
+    PerformanceLevel string
+}

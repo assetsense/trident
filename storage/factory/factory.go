@@ -21,6 +21,7 @@ import (
 	"github.com/netapp/trident/storage_drivers/gcp"
 	"github.com/netapp/trident/storage_drivers/ontap"
 	"github.com/netapp/trident/storage_drivers/solidfire"
+	"github.com/netapp/trident/storage_drivers/nvmeof"
 )
 
 // SpecOnlyValidation applies to values supplied through the CRD controller, this ensures that
@@ -148,6 +149,8 @@ func GetStorageDriver(driverName, driverProtocol string) (storage.Driver, error)
 		storageDriver = &gcp.NFSStorageDriver{}
 	case config.FakeStorageDriverName:
 		storageDriver = &fake.StorageDriver{}
+	case config.NVMeoFDriverName:
+		storageDriver = &nvmeof.NVMeoFBackend{}
 	default:
 		return nil, fmt.Errorf("unknown storage driver: %v", driverName)
 	}
